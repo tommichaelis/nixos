@@ -17,6 +17,7 @@
       ./users.nix
       ./yubikey.nix
       ./emacs.nix
+      ./mopidy.nix
       ./postgres.nix
     ];
 
@@ -67,20 +68,6 @@
     rxvt_unicode
   ];
 
-  services.mopidy = {
-    enable = true;
-    extensionPackages = [ pkgs.mopidy-spotify pkgs.mopidy-moped ];
-    configuration = ''
-      [spotify]
-      enabled = true
-      username = tommichaelis
-      password = media
-
-      [mopify]
-      enabled = true
-      debug = true
-    '';
-  };
   powerManagement.enable = true;
   hardware.pulseaudio.enable = true;
   
